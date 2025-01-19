@@ -1,4 +1,4 @@
-export const endPoints = {
+export const endPoint = {
   products: '/products',
   comments: '/comments',
 };
