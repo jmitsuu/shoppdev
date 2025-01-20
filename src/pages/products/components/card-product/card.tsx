@@ -1,8 +1,12 @@
+import useStoreCart from '@/global/useStoreCart';
 import { Tproducts } from '../../products.type';
 interface CardProductProps {
   product: Tproducts;
+  itemProduct: Tproducts;
 }
-export function CardProduct({ product }: CardProductProps) {
+export function CardProduct({ product, itemProduct }: CardProductProps) {
+  const { incCart } = useStoreCart();
+
   return (
     <div className="cursor-pointer  group">
       <div className="relative transition-all ">
@@ -11,7 +15,10 @@ export function CardProduct({ product }: CardProductProps) {
           alt={product.title}
           className="h-80 w-52 rounded-md"
         />
-        <div className="absolute bottom-0 opacity-90 left-0 w-full h-20 rounded-md group-hover:bg-black flex items-center justify-center">
+        <div
+          onClick={() => incCart(itemProduct)}
+          className="absolute bottom-0 opacity-90 left-0 w-full h-20 rounded-md group-hover:bg-black flex items-center justify-center"
+        >
           <h1 className="text-orange-500 font-bold hidden group-hover:flex ">
             COMPRAR
           </h1>

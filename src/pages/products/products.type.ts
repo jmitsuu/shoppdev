@@ -5,5 +5,5 @@ export interface Tproducts {
   description?: string;
   category: string;
   genere: string;
-  _id?: number;
+  _id: number;
 }

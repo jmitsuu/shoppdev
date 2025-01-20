@@ -14,7 +14,13 @@ export function Recommended() {
       />
       <div className="flex justify-center my-20 gap-x-5">
         {data.recommendedProducts?.map((product: Tproducts) => {
-          return <CardProduct product={product} key={product._id} />;
+          return (
+            <CardProduct
+              itemProduct={product}
+              product={product}
+              key={product._id}
+            />
+          );
         })}
       </div>
     </Container>

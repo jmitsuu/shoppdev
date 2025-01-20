@@ -29,7 +29,13 @@ export function HomePage() {
         </div>
         <div className="flex justify-center my-20 gap-x-5">
           {data.homePopularSeason?.map((product: Tproducts) => {
-            return <CardProduct product={product} key={product._id} />;
+            return (
+              <CardProduct
+                itemProduct={product}
+                product={product}
+                key={product._id}
+              />
+            );
           })}
         </div>
         <Banner />
