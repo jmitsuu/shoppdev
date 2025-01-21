@@ -6,7 +6,7 @@ export function Hero() {
     <section className="w-full min-h-[500px] my-20 overflow-hidden ">
       <div className="w-full container mx-auto flex md:flex-row flex-col items-center justify-between">
         <div className="lg:w-[800px] md:w-[400xl] sm:w-[300px] space-y-4">
-          <h1 className="lg:text-[7rem] md:text-6xl sm:text-4xl text-2xl font-bold">
+          <h1 className="lg:text-8xl md:text-6xl sm:text-4xl text-2xl font-bold">
             Moda para todas as estações
           </h1>
           <h2 className="text-orange-600 text-2xl font-bold">MUDE!</h2>

@@ -3,6 +3,7 @@ import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { IoPerson } from 'react-icons/io5';
 import { ModelHeader } from './model-header';
 import { Cart } from '../cart/Cart';
+import { Link, NavLink } from 'react-router-dom';
 export function Header() {
   const { data } = ModelHeader();
   return (
@@ -18,9 +19,13 @@ export function Header() {
           <ul className="gap-x-8 flex items-center ">
             {data.menuLinks.map((menu) => {
               return (
-                <li key={menu.title} className="cursor-pointer  text-gray-500">
+                <Link
+                  key={menu.title}
+                  to={menu.route}
+                  className="cursor-pointer  text-gray-500"
+                >
                   {menu.title}
-                </li>
+                </Link>
               );
             })}
           </ul>
@@ -30,9 +35,11 @@ export function Header() {
             <FaMagnifyingGlass />
             <h3>Pesquisar</h3>
           </li>
-          <li className="flex flex-col items-center cursor-pointer text-gray-600">
-            <IoPerson />
-            <h3>Entrar</h3>
+          <li className=" cursor-pointer text-gray-600">
+            <NavLink to="/auth" className="flex flex-col items-center">
+              <IoPerson />
+              <h3>Entrar</h3>
+            </NavLink>
           </li>
           <li className="flex flex-col items-center cursor-pointer text-gray-600">
             <Cart />
