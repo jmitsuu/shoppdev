@@ -8,6 +8,7 @@ import { Tproducts } from '../products.type';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Banner } from '../components/banner/banner';
 import { Recommended } from '../components/recommended/recommended';
+import { ContainerCards } from '../layouts/containerCards';
 export function HomePage() {
   const { data, state } = useModelProducts();
 
@@ -27,7 +28,7 @@ export function HomePage() {
             ''
           )}
         </div>
-        <div className="flex justify-center my-20 gap-x-5">
+        <ContainerCards>
           {data.homePopularSeason?.map((product: Tproducts) => {
             return (
               <CardProduct
@@ -37,7 +38,7 @@ export function HomePage() {
               />
             );
           })}
-        </div>
+        </ContainerCards>
         <Banner />
         <Recommended />
       </Container>

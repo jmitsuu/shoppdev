@@ -8,11 +8,14 @@ import {
 } from '@/components/ui/sheet';
 import useStoreCart from '@/global/useStoreCart';
 import { FaCartShopping, FaX } from 'react-icons/fa6';
-export function Cart() {
+interface CartProps {
+  styleCart: string;
+}
+export function Cart(styleCart: CartProps) {
   const { cart, decrCart } = useStoreCart();
   return (
     <Sheet>
-      <SheetTrigger>
+      <SheetTrigger className={`${styleCart}`}>
         {' '}
         <h3 className="flex flex-col items-center relative">
           <span className="text-xs absolute bottom-8 right-3">

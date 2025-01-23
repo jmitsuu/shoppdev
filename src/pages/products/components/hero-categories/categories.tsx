@@ -2,7 +2,7 @@ import { arrayCategories } from './model-categorie';
 
 export function Categories() {
   return (
-    <section className="w-full h-52 flex justify-center items-center gap-x-4 my-20">
+    <section className="w-full min-h-52 flex flex-wrap justify-center items-center gap-x-4 gap-y-2 my-20">
       {arrayCategories.map((categorie) => {
         return (
           <div

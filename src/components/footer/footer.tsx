@@ -3,9 +3,9 @@ import { aboutUs } from './model.footer';
 import { Input } from '@/components/ui/input';
 export function Footer() {
   return (
-    <section className="w-full h-96 bg-black p-10">
-      <div className="w-full h-full mx-auto container flex md:flex-row flex-col lg:justify-between justify-center items-center">
-        <div className="max-w-96  h-44">
+    <section className="w-full min-h-96 bg-black p-10 py-20">
+      <div className="w-full h-full mx-auto container flex md:flex-row flex-col lg:justify-between  justify-center items-center">
+        <div className="w-96  h-44">
           <h1 className="text-orange-500 text-2xl">What is Lorem Ipsum?</h1>
           <h2 className="text-slate-500">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -21,7 +21,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="max-w-96 h-44">
+        <div className="w-96 h-44">
           <h1 className="text-orange-500 text-2xl">Empresa</h1>
 
           <ul>
@@ -37,14 +37,14 @@ export function Footer() {
             })}
           </ul>
         </div>
-        <div className="max-w-96 h-44">
+        <div className="w-96 h-44">
           <h1 className="text-orange-500 text-2xl">Nossos endereços</h1>
           <h2 className="text-slate-500">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.{' '}
           </h2>
         </div>
-        <div className="max-w-96 h-44">
+        <div className="w-96 md:h-44 h-32">
           <h1 className="text-orange-500 text-2xl">Receba novidades</h1>
           <Input className="w-full bg-slate-300" placeholder="cadastre-se" />
           <Button className="mt-2 hover:opacity-50">Cadastrar</Button>

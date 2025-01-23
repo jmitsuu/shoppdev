@@ -15,7 +15,7 @@ export function Header() {
             Shopp <span className="text-orange-600">Dev</span>
           </h1>
         </div>
-        <nav className="flex items-center h-full">
+        <nav className="md:flex items-center h-full hidden">
           <ul className="gap-x-8 flex items-center ">
             {data.menuLinks.map((menu) => {
               return (
@@ -30,7 +30,7 @@ export function Header() {
             })}
           </ul>
         </nav>
-        <ul className="flex items-center gap-x-4">
+        <ul className="md:flex hidden items-center gap-x-4">
           <li className="flex flex-col items-center cursor-pointer text-gray-600">
             <FaMagnifyingGlass />
             <h3>Pesquisar</h3>
@@ -42,9 +42,12 @@ export function Header() {
             </NavLink>
           </li>
           <li className="flex flex-col items-center cursor-pointer text-gray-600">
-            <Cart />
+            <Cart styleCart="" />
           </li>
         </ul>
+        <div className="md:hidden">
+          <Cart styleCart="" />
+        </div>
       </div>
     </header>
   );

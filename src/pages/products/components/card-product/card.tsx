@@ -13,13 +13,13 @@ export function CardProduct({ product, itemProduct }: CardProductProps) {
         <img
           src={product.image_url}
           alt={product.title}
-          className="h-80 w-52 rounded-md"
+          className="h-72 w-52 rounded-md"
         />
         <div
           onClick={() => incCart(itemProduct)}
-          className="absolute bottom-0 opacity-90 left-0 w-full h-10  rounded-md group-hover:bg-black flex items-center justify-center"
+          className="absolute bottom-0 opacity-90 left-0 min-w-52 h-10  rounded-md md:bg-transparent bg-black group-hover:bg-black flex items-center justify-center"
         >
-          <h1 className="text-orange-500 font-bold hidden group-hover:flex hover:text-orange-600 hover:underline">
+          <h1 className="text-orange-500 font-bold md:hidden md:group-hover:flex hover:text-orange-600 hover:underline">
             Adicionar ao carrinho
           </h1>
         </div>
