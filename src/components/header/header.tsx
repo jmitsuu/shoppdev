@@ -4,8 +4,10 @@ import { IoPerson } from 'react-icons/io5';
 import { ModelHeader } from './model-header';
 import { Cart } from '../cart/Cart';
 import { Link, NavLink } from 'react-router-dom';
+import { useModelAdminAuth } from '@/pages/admin/model.admin';
 export function Header() {
   const { data } = ModelHeader();
+  const { data: checkAdm } = useModelAdminAuth();
   return (
     <header className="  h-20">
       <div className="flex items-center justify-between h-20 px-10  w-screen fixed  mx-auto z-50 bg-white border-b">
@@ -28,6 +30,24 @@ export function Header() {
                 </Link>
               );
             })}
+            {checkAdm.userAdmin?.status === 200 ? (
+              <>
+                <Link
+                  to={'/productmanagement'}
+                  className="cursor-pointer  text-blue-500"
+                >
+                  Gerenciamento
+                </Link>
+                <Link
+                  to={'/dashboard'}
+                  className="cursor-pointer  text-blue-500"
+                >
+                  Dashboard
+                </Link>
+              </>
+            ) : (
+              ''
+            )}
           </ul>
         </nav>
         <ul className="md:flex hidden items-center gap-x-4">

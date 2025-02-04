@@ -10,12 +10,20 @@ export function ModelHeader() {
     },
     {
       title: 'Homens',
-      route: '/men',
+      route: '/male',
     },
     {
       title: 'Mulheres',
-      route: '/women',
+      route: '/female',
     },
+    // {
+    //   title: 'Gerenciamento',
+    //   route: '/productmanagement',
+    // },
+    // {
+    //   title: 'Dashboard',
+    //   route: '/dashboard',
+    // },
   ];
   return {
     data: { menuLinks },

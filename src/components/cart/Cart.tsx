@@ -11,6 +11,7 @@ import { FaCartShopping, FaX } from 'react-icons/fa6';
 interface CartProps {
   styleCart: string;
 }
+const API_URL = import.meta.env.VITE_API_URL;
 export function Cart(styleCart: CartProps) {
   const { cart, decrCart } = useStoreCart();
   return (
@@ -34,9 +35,9 @@ export function Cart(styleCart: CartProps) {
             return (
               <div className="border min-h-14 w-full p-1 rounded-md flex items-center gap-2 relative">
                 <img
-                  src={item.image_url}
+                  src={`${API_URL + item.path_image}`}
                   alt={item.title}
-                  className="w-10 h-10"
+                  className=" h-10"
                 />
                 <div>
                   <h1 className="text-xs">{item.title}</h1>

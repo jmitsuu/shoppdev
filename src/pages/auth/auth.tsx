@@ -5,7 +5,6 @@ export function Auth() {
   return (
     <section className="min-h-screen">
       <Container>
-        <h1>Auth</h1>
         <Outlet />
       </Container>
     </section>
