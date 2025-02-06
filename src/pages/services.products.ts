@@ -16,7 +16,7 @@ export async function getProducts(limit: number) {
 export async function getProductsGenders(gender: string) {
   try {
     const { data } = await axios.get(
-      `${API_URL + endPoint.products.list}?searchbygender=${gender}`
+      `${API_URL + endPoint.products.list}/searchbygender?gender=${gender}`
     );
     return data;
   } catch (error: any) {

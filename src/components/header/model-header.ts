@@ -10,11 +10,11 @@ export function ModelHeader() {
     },
     {
       title: 'Homens',
-      route: '/male',
+      route: '/clothes?gender=male',
     },
     {
       title: 'Mulheres',
-      route: '/female',
+      route: '?gender=female',
     },
     // {
     //   title: 'Gerenciamento',

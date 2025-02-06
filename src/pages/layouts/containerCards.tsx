@@ -1,10 +1,11 @@
 interface TypeContainerCards {
   children: React.ReactNode;
+  styleDiv?: string;
 }
-export function ContainerCards({ children }: TypeContainerCards) {
+export function ContainerCards({ children, styleDiv }: TypeContainerCards) {
   return (
-    <div className="md:space-x-5 my-20 gap-x-5 justify-center flex flex-wrap items-center mx-auto">
-      {children}
+    <div className="w-full flex  justify-center items-center mt-20 ">
+      <div className={` ${styleDiv} gap-5`}>{children}</div>
     </div>
   );
 }

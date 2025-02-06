@@ -11,8 +11,7 @@ import { HomePage } from '@/pages/home/homepage';
 import { Route, Routes } from 'react-router-dom';
 import { useModelAdminAuth } from '@/pages/admin/model.admin';
 import { Unauthorized } from '@/pages/layouts/unauthorized';
-import { Male } from '@/pages/genders/male/male';
-import { Female } from '@/pages/genders/female/female';
+import { GenderProducts } from '@/pages/allgenders/gendersproducts';
 
 export function ShoppRoutes() {
   const { data } = useModelAdminAuth();
@@ -21,8 +20,8 @@ export function ShoppRoutes() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/completefashion" element={<CompleteFashion />} />
-      <Route path="/male" element={<Male />} />
-      <Route path="/female" element={<Female />} />
+      <Route path="/clothes" element={<GenderProducts />} />
+
       {data.userAdmin?.status === 200 ? (
         <Route path="/productmanagement" element={<ProductManagement />} />
       ) : (

@@ -5,9 +5,9 @@ import { Title } from './components/title/title';
 import { useModelProducts } from './model.home';
 import { CardProduct } from '../../components/card-product/card';
 import { Tproducts } from '../products.type';
-import { Skeleton } from '@/components/ui/skeleton';
 import { Banner } from './components/banner/banner';
 import { ContainerCards } from '../layouts/containerCards';
+import { SkeletonCard } from '../layouts/skeletonCard';
 export function HomePage() {
   const { data, state } = useModelProducts();
 
@@ -21,13 +21,9 @@ export function HomePage() {
           subTitle="Os melhores estilos para você aproveitar nessa temporada"
         />
         <div className="w-full flex justify-center items-center ">
-          {state.isPending ? (
-            <Skeleton className="h-80 w-52 rounded-md my-20 " />
-          ) : (
-            ''
-          )}
+          {state.isPending || state.isError ? <SkeletonCard qtDivs={4} /> : ''}
         </div>
-        <ContainerCards>
+        <ContainerCards styleDiv="flex justify-center items-center">
           {data.listProducts?.map((product: Tproducts) => {
             return (
               <CardProduct
@@ -43,7 +39,10 @@ export function HomePage() {
           title="Recomendados"
           subTitle="Estilos que talvez encaixe melhor no seu perfil"
         />
-        <ContainerCards>
+        <div className="w-full flex justify-center items-center ">
+          {state.isPending || state.isError ? <SkeletonCard qtDivs={4} /> : ''}
+        </div>
+        <ContainerCards styleDiv="flex justify-center items-center">
           {data.listProducts?.map((product: Tproducts) => {
             return (
               <CardProduct

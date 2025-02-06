@@ -8,13 +8,14 @@ import { useModelAdminAuth } from '@/pages/admin/model.admin';
 export function Header() {
   const { data } = ModelHeader();
   const { data: checkAdm } = useModelAdminAuth();
+
   return (
     <header className="  h-20">
       <div className="flex items-center justify-between h-20 px-10  w-screen fixed  mx-auto z-50 bg-white border-b">
         <div className="flex items-center  uppercase">
           <img src={icon} className="h-8" />
           <h1 className="ml-2 font-extrabold text-3xl underline">
-            Shopp <span className="text-orange-600">Dev</span>
+            Dev <span className="text-orange-600">Shopp</span>
           </h1>
         </div>
         <nav className="md:flex items-center h-full hidden">
