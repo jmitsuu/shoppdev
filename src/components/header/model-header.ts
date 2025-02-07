@@ -5,24 +5,20 @@ export function ModelHeader() {
       route: '/',
     },
     {
-      title: 'Moda Completa',
-      route: '/completefashion',
+      title: 'Roupas',
+      route: '/clothes/all',
     },
     {
-      title: 'Homens',
-      route: '/clothes?gender=male',
-    },
-    {
-      title: 'Mulheres',
-      route: '?gender=female',
+      title: 'Acessórios',
+      route: '/accessories',
     },
     // {
-    //   title: 'Gerenciamento',
-    //   route: '/productmanagement',
+    //   title: 'Homens',
+    //   route: '/clothes?gender=male',
     // },
     // {
-    //   title: 'Dashboard',
-    //   route: '/dashboard',
+    //   title: 'Mulheres',
+    //   route: '?gender=female',
     // },
   ];
   return {

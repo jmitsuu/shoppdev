@@ -1,9 +1,9 @@
-import { Tproducts } from '@/pages/products.type';
-import { useModelGenders } from './model.genders';
+import { Tproducts } from '@/pages/products/products.type';
 import { CardProduct } from '@/components/card-product/card';
-import { ContainerCards } from '../layouts/containerCards';
-import { Container } from '../layouts/container';
-import { SkeletonCard } from '../layouts/skeletonCard';
+import { ContainerCards } from '../../../layouts/containerCards';
+import { Container } from '../../../layouts/container';
+import { SkeletonCard } from '../../../layouts/skeletonCard';
+import { useModelGenders } from './model.genders';
 
 export function GenderProducts() {
   const { data, state } = useModelGenders();

@@ -1,4 +1,4 @@
-import { Tproducts } from '@/pages/products.type';
+import { Tproducts } from '@/pages/products/products.type';
 import { toast } from 'sonner';
 import { create } from 'zustand';
 

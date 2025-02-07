@@ -4,7 +4,7 @@ import { IoPerson } from 'react-icons/io5';
 import { ModelHeader } from './model-header';
 import { Cart } from '../cart/Cart';
 import { Link, NavLink } from 'react-router-dom';
-import { useModelAdminAuth } from '@/pages/admin/model.admin';
+import { useModelAdminAuth } from '@/pages/products/admin/model.admin';
 export function Header() {
   const { data } = ModelHeader();
   const { data: checkAdm } = useModelAdminAuth();

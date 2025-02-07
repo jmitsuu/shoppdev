@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowUpDown } from 'lucide-react';
 import { MdEdit, MdDelete } from 'react-icons/md';
 import { ColumnDef } from '@tanstack/react-table';
-import { Tproducts } from '@/pages/products.type';
+import { Tproducts } from '@/pages/products/products.type';
 import { EditProduct } from '../modal-edit-table/editproduct';
 const API_URL = import.meta.env.VITE_API_URL;
 export const columnsTable: ColumnDef<Tproducts>[] = [

@@ -1,6 +1,6 @@
 import { endPoint } from '@/api/endpoint';
 import axios from 'axios';
-import { getTokenAdmin } from '../utils/getlocalstorage';
+import { getTokenAdmin } from '../../../utils/getlocalstorage';
 const API_URL = import.meta.env.VITE_API_URL;
 
 export async function userAdminSignin() {

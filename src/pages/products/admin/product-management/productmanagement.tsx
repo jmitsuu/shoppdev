@@ -1,8 +1,9 @@
 import { Container } from '@/pages/layouts/container';
 import { columnsTable } from '../components/list-products/columns';
 import { ListTableProducts } from '../components/list-products/listtableproducts';
-import { useModelProducts } from '@/pages/home/model.home';
+
 import { CreateProduct } from '../components/modal-create-products/createproduct';
+import { useModelProducts } from '../../model.products';
 
 export function ProductManagement() {
   const { data } = useModelProducts();
