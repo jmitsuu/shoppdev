@@ -7,7 +7,6 @@ export async function userAdminSignin() {
   const token = getTokenAdmin.userData
     ? JSON.parse(getTokenAdmin.userData)
     : null;
-  console.log(token);
   if (token) {
     return await axios.get(`${API_URL + endPoint.user.admin}`, {
       headers: {

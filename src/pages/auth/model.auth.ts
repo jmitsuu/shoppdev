@@ -30,7 +30,6 @@ export function useModelAuth() {
     mutationKey: [cacheKey.user.login],
     mutationFn: userSignin,
     onSuccess(data) {
-      console.log(data?.data, ' model');
       if (data?.data) {
         localStorage.setItem('userData', JSON.stringify(data?.data));
         setTimeout(() => {

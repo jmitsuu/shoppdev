@@ -3,7 +3,7 @@ interface TypeContainer {
 }
 export function Container({ children }: TypeContainer) {
   return (
-    <section className="min-h-full w-full mx-auto container my-40">
+    <section className="min-h-screen w-full mx-auto container my-16">
       {children}
     </section>
   );

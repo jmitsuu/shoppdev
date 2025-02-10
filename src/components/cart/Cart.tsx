@@ -8,12 +8,15 @@ import {
 } from '@/components/ui/sheet';
 import useStoreCart from '@/global/useStoreCart';
 import { FaCartShopping, FaX } from 'react-icons/fa6';
+import { useModelCart } from './model.cart';
+import { Button } from '../ui/button';
 interface CartProps {
   styleCart: string;
 }
 const API_URL = import.meta.env.VITE_API_URL;
 export function Cart(styleCart: CartProps) {
   const { cart, decrCart } = useStoreCart();
+  const { data } = useModelCart();
   return (
     <Sheet>
       <SheetTrigger className={`${styleCart}`}>
@@ -33,7 +36,10 @@ export function Cart(styleCart: CartProps) {
         <div className="space-y-1 h-96 max-h-96 border p-1 rounded-md overflow-y-auto">
           {cart?.map((item) => {
             return (
-              <div className="border min-h-14 w-full p-1 rounded-md flex items-center gap-2 relative">
+              <div
+                key={item._id}
+                className="border min-h-14 w-full p-1 rounded-md flex items-center gap-2 relative"
+              >
                 <img
                   src={`${API_URL + item.path_image}`}
                   alt={item.title}
@@ -51,11 +57,21 @@ export function Cart(styleCart: CartProps) {
             );
           })}
         </div>
+        <div className="flex items-center gap-x-2 mt-2">
+          {' '}
+          <h3>Total:</h3>
+          <span className="font-bold">
+            {data.amoutPrice !== 0 ? `${data.amoutPrice} R$` : ''}
+          </span>
+        </div>
         <SheetDescription>
           {cart.length >= 1
             ? `${cart?.length} items adicionado ao carrinho`
             : 'Nenhum item adicionado ao carrinho'}
         </SheetDescription>
+        <Button className="mt-5 w-full bg-orange-600 hover:bg-orange-700">
+          Finalizar Compra
+        </Button>
       </SheetContent>
     </Sheet>
   );

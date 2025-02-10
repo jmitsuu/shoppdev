@@ -15,12 +15,18 @@ const filterItemDuplicate = ({ stateOne, stateTwo }: TypeFilterCart) => {
   const findItem = stateOne.findIndex(
     (item: Tproducts) => item._id === stateTwo._id
   );
+  localStorage.setItem('cart', JSON.stringify([...stateOne, stateTwo]));
+
+  toast.success('Produto adicionado ao carrinho');
   if (findItem >= 0) {
-    toast('Produto já foi adicionado ao carrinho');
+    toast.warning('Produto já foi adicionado ao carrinho');
     return { cart: stateOne };
   }
-  return { cart: [...stateOne, stateTwo] };
+  const getCartLocal = localStorage.getItem('cart');
+  const newCart = JSON.parse(getCartLocal || '');
+  return { cart: newCart };
 };
+const removeLocalStorageCart = () => {};
 
 const useStoreCart = create<Store>()((set) => ({
   cart: [],

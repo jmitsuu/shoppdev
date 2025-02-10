@@ -14,6 +14,7 @@ import { GenderProducts } from '@/pages/products/clothes/male&female/gendersprod
 import { Clothes } from '@/pages/products/clothes/clothes';
 import { AllClothes } from '@/pages/products/clothes/all/allclothes';
 import { InfoProduct } from '@/pages/products/product/infoProduct';
+import { CheckOut } from '@/pages/products/checkout/checkout';
 
 export function ShoppRoutes() {
   const { data } = useModelAdminAuth();
@@ -27,6 +28,14 @@ export function ShoppRoutes() {
         <Route path="clothes" element={<GenderProducts />} />
       </Route>
       <Route path="/product/:id" element={<InfoProduct />} />
+      <Route path="/checkout" element={<CheckOut />} />
+
+      <Route path="/auth" element={<Auth />}>
+        <Route index element={<SignIn />} />
+        <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<PageErrorAuth />} />
+      </Route>
       {data.userAdmin?.status === 200 ? (
         <Route path="/productmanagement" element={<ProductManagement />} />
       ) : (
@@ -38,12 +47,6 @@ export function ShoppRoutes() {
       ) : (
         <Route path="/dashboard" element={<Unauthorized />} />
       )}
-      <Route path="/auth" element={<Auth />}>
-        <Route index element={<SignIn />} />
-        <Route path="signin" element={<SignIn />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route path="*" element={<PageErrorAuth />} />
-      </Route>
       <Route path="*" element={<PageErrorShopp />} />
     </Routes>
   );

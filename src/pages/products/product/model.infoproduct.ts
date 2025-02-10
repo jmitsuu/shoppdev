@@ -8,7 +8,6 @@ export function useModelInfoProduct() {
   const findProduct = data.listProducts?.find((product: Tproducts) => {
     return product._id.toString() === id;
   });
-  console.log(findProduct, id);
   return {
     state: { isPending: state.isPending },
     data: { findProduct },

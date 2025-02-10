@@ -23,14 +23,14 @@ export function InfoProduct() {
           </div>
         ) : (
           <div className=" flex justify-center items-center">
-            <div className="min-h-96 w-[600px] flex md:flex-row flex-col  p-2 space-x-5">
+            <div className="min-h-96 w-[600px] flex md:flex-row flex-col border rounded-sm p-2 space-x-5">
               {state.isPending ? <Skeleton className="w-[255px]" /> : ''}
 
               <img
                 className="h-96 w-64 rounded-sm mx-auto"
                 src={`${API_URL}${data.findProduct?.path_image}`}
               />
-              <div className="relative md:min-h-full min-h-60 flex flex-col items-center">
+              <div className="relative md:min-h-full min-h-60 flex flex-col items-center md:items-start">
                 <h1 className="text-xl font-light text-gray-600 ">
                   {data.findProduct?.title}
                 </h1>
@@ -44,6 +44,18 @@ export function InfoProduct() {
                 <h2 className="text-sm text-gray-600">
                   7x de R$ {Number(data.findProduct?.price / 7).toFixed(2)}
                 </h2>
+                <div className="flex items-center mt-10 space-x-2">
+                  <h1 className="text-slate-600 text-sm">Tamanho:</h1>
+                  <div className="h-4 w-4 border rounded-sm"> </div>
+                  <div className="h-4 w-4 border rounded-sm"></div>
+                  <div className="h-4 w-4 border rounded-sm"></div>
+                </div>
+                <div className="flex items-center mt-10 space-x-2">
+                  <h1 className="text-slate-600 text-sm">Cor:</h1>
+                  <div className="h-4 w-4 border rounded-sm"> </div>
+                  <div className="h-4 w-4 border rounded-sm"></div>
+                  <div className="h-4 w-4 border rounded-sm"></div>
+                </div>
                 <Button
                   onClick={() => {
                     incCart(data.findProduct);

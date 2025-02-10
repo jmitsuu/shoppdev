@@ -4,7 +4,6 @@ import { Links } from './model.clothes';
 export function Clothes() {
   const location = useLocation();
   const findGenderTitle = location.search.replace('?gender=', '');
-  console.log(findGenderTitle);
 
   return (
     <section className="min-h-screen">

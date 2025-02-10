@@ -26,7 +26,7 @@ export function HomePage() {
           subTitle="Os melhores estilos para você aproveitar nessa temporada"
         />
         <div className="w-full flex justify-center items-center ">
-          {state.isPending || state.isError ? <SkeletonCard qtDivs={4} /> : ''}
+          {state.isPending || state.isError ? <SkeletonCard qtDivs={3} /> : ''}
         </div>
         <ContainerCards styleDiv="flex justify-center items-center">
           {data.listProducts?.map((product: Tproducts) => {
@@ -45,7 +45,7 @@ export function HomePage() {
           subTitle="Estilos que talvez encaixe melhor no seu perfil"
         />
         <div className="w-full flex justify-center items-center ">
-          {state.isPending || state.isError ? <SkeletonCard qtDivs={4} /> : ''}
+          {state.isPending || state.isError ? <SkeletonCard qtDivs={3} /> : ''}
         </div>
         <ContainerCards styleDiv="flex justify-center items-center">
           {data.listProducts?.map((product: Tproducts) => {
