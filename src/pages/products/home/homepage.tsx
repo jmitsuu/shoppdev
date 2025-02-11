@@ -28,7 +28,7 @@ export function HomePage() {
         <div className="w-full flex justify-center items-center ">
           {state.isPending || state.isError ? <SkeletonCard qtDivs={3} /> : ''}
         </div>
-        <ContainerCards styleDiv="flex justify-center items-center">
+        <ContainerCards styleDiv="flex md:flex-row flex-col justify-center items-center">
           {data.listProducts?.map((product: Tproducts) => {
             return (
               <CardProduct
@@ -47,7 +47,7 @@ export function HomePage() {
         <div className="w-full flex justify-center items-center ">
           {state.isPending || state.isError ? <SkeletonCard qtDivs={3} /> : ''}
         </div>
-        <ContainerCards styleDiv="flex justify-center items-center">
+        <ContainerCards styleDiv="flex md:flex-row flex-col justify-center items-center">
           {data.listProducts?.map((product: Tproducts) => {
             return (
               <CardProduct

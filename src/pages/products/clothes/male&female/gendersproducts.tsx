@@ -13,7 +13,7 @@ export function GenderProducts() {
         <div className="flex items-center justify-center">
           {state.isLoading || state.isError ? <SkeletonCard qtDivs={8} /> : ''}
         </div>
-        <ContainerCards styleDiv="grid grid-cols-5 gap-4">
+        <ContainerCards styleDiv="grid md:grid-cols-5 sm:grid-cols-2 gap-4">
           {data.listProducts?.map((product: Tproducts) => {
             return (
               <CardProduct

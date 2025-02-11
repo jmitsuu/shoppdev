@@ -16,9 +16,9 @@ interface CartProps {
 const API_URL = import.meta.env.VITE_API_URL;
 export function Cart(styleCart: CartProps) {
   const { cart, decrCart } = useStoreCart();
-  const { data } = useModelCart();
+  const { data, actions, state } = useModelCart();
   return (
-    <Sheet>
+    <Sheet open={state.modal} onOpenChange={actions.setModal}>
       <SheetTrigger className={`${styleCart}`}>
         {' '}
         <h3 className="flex flex-col items-center relative">
@@ -69,7 +69,10 @@ export function Cart(styleCart: CartProps) {
             ? `${cart?.length} items adicionado ao carrinho`
             : 'Nenhum item adicionado ao carrinho'}
         </SheetDescription>
-        <Button className="mt-5 w-full bg-orange-600 hover:bg-orange-700">
+        <Button
+          onClick={actions.nextToTheCheckout}
+          className="mt-5 w-full bg-orange-600 hover:bg-orange-700"
+        >
           Finalizar Compra
         </Button>
       </SheetContent>

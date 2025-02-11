@@ -11,7 +11,9 @@ export function Title({
   styleSubtitle,
 }: TypeText) {
   return (
-    <div className={`md:w-full  flex flex-col justify-center items-center`}>
+    <div
+      className={`md:w-full  flex flex-col justify-center items-center mb-10`}
+    >
       <h1 className={`font-bold md:text-6xl text-3xl ${styleTitle}`}>
         {title}
       </h1>

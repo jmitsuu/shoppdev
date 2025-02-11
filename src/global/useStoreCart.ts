@@ -1,42 +1,43 @@
 import { Tproducts } from '@/pages/products/products.type';
-import { toast } from 'sonner';
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 type Store = {
   cart: Tproducts[];
   incCart: (item: Tproducts) => void;
   decrCart: (id: string) => void;
+  isOpen?: boolean;
+  open?: () => void;
+  close?: () => void;
+  toggle?: () => void;
 };
-type TypeFilterCart = {
-  stateOne: Tproducts[];
-  stateTwo: Tproducts;
-};
-const filterItemDuplicate = ({ stateOne, stateTwo }: TypeFilterCart) => {
-  const findItem = stateOne.findIndex(
-    (item: Tproducts) => item._id === stateTwo._id
-  );
-  localStorage.setItem('cart', JSON.stringify([...stateOne, stateTwo]));
 
-  toast.success('Produto adicionado ao carrinho');
-  if (findItem >= 0) {
-    toast.warning('Produto já foi adicionado ao carrinho');
-    return { cart: stateOne };
-  }
-  const getCartLocal = localStorage.getItem('cart');
-  const newCart = JSON.parse(getCartLocal || '');
-  return { cart: newCart };
-};
-const removeLocalStorageCart = () => {};
+const useStoreCart = create<Store>()(
+  persist(
+    (set) => ({
+      cart: [],
+      incCart: (item) =>
+        set((state) => {
+          const findItem = state.cart.findIndex((i) => i._id === item._id);
+          if (findItem >= 0) {
+            return { cart: state.cart };
+          }
+          return { cart: [...state.cart, item] };
+        }),
+      decrCart: (id) =>
+        set((state) => {
+          const newCart = state.cart.filter((item) => item._id !== id);
+          return { cart: newCart };
+        }),
+      isOpen: false,
+      open: () => set({ isOpen: true }),
+      close: () => set({ isOpen: false }),
+      toggle: () => set((state) => ({ isOpen: !state.isOpen })),
+    }),
+    {
+      name: 'cart',
+    }
+  )
+);
 
-const useStoreCart = create<Store>()((set) => ({
-  cart: [],
-  incCart: (item) =>
-    set((state) =>
-      filterItemDuplicate({ stateOne: state.cart, stateTwo: item })
-    ),
-  decrCart: (id: string) =>
-    set((state) => ({
-      cart: state.cart.filter((item) => item._id !== id),
-    })),
-}));
 export default useStoreCart;
