@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { TuserCreate, TuserSignin } from './auth.type';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -7,8 +7,6 @@ import { cacheKey } from '@/cache/cacheKey';
 import { userSignin } from './services.auth';
 
 export function useModelAuth() {
-  const queryClient = useQueryClient();
-
   const formCreateAndEdit = useForm<TuserCreate>({
     resolver: zodResolver(userCreateSchema),
     defaultValues: {

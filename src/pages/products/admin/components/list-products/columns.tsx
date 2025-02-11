@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowUpDown } from 'lucide-react';
-import { MdEdit, MdDelete } from 'react-icons/md';
+import { MdDelete } from 'react-icons/md';
 import { ColumnDef } from '@tanstack/react-table';
 import { Tproducts } from '@/pages/products/products.type';
 import { EditProduct } from '../modal-edit-table/editproduct';

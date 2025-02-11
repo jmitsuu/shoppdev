@@ -23,7 +23,7 @@ export function useModalCreateProduct() {
       price: 0,
       description: '',
       category: 'Roupas',
-      genere: 'Masculino',
+      gender: 'Masculino',
       path_image: null as File | null,
     },
   });
@@ -43,7 +43,7 @@ export function useModalCreateProduct() {
     formData.append('price', data.price.toString());
     formData.append('description', data.description);
     formData.append('category', data.category);
-    formData.append('genere', data.genere);
+    formData.append('genere', data.gender);
     submitProduct(formData);
   };
   return {
