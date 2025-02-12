@@ -33,7 +33,7 @@ export function MenuMobile({}: CartProps) {
                 <NavLink
                   key={menu.title}
                   to={menu.route}
-                  className="cursor-pointer text-xl gap-x-2 flex items-center text-gray-500"
+                  className="cursor-pointer text-xl gap-x-2 flex items-center text-orange-500"
                 >
                   {menu.icon && <menu.icon />} {menu.title}
                 </NavLink>
@@ -43,13 +43,13 @@ export function MenuMobile({}: CartProps) {
               <>
                 <NavLink
                   to={'/productmanagement'}
-                  className="cursor-pointer flex items-center gap-x-2   text-xl text-blue-500"
+                  className="cursor-pointer flex items-center gap-x-2   text-xl text-red-500"
                 >
                   <MdOutlineHandyman /> Gerenciamento
                 </NavLink>
                 <NavLink
                   to={'/dashboard'}
-                  className="cursor-pointer flex items-center gap-x-2  text-xl  text-blue-500"
+                  className="cursor-pointer flex items-center gap-x-2  text-xl  text-red-500"
                 >
                   <MdDashboard /> Dashboard
                 </NavLink>
@@ -60,7 +60,7 @@ export function MenuMobile({}: CartProps) {
             <li className=" cursor-pointer text-gray-500">
               <NavLink
                 to="/auth"
-                className="flex items-center gap-x-2  text-xl"
+                className="flex items-center gap-x-2  text-xl text-orange-500"
               >
                 <IoPerson />
                 <h3>Entrar</h3>

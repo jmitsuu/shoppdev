@@ -12,7 +12,7 @@ export function InfoProduct() {
     <section>
       <Container>
         {state.isPending ? (
-          <div className=" flex ">
+          <div className=" flex items-center justify-center ">
             <div className="border rounded-sm min-h-96 w-[900px] flex md:flex-row flex-col p-2 space-x-5">
               <Skeleton className="w-[255px]" />
               <div className="space-y-2">

@@ -6,7 +6,7 @@ export function Categories() {
       {arrayCategories.map((categorie) => {
         return (
           <div
-            className="h-32 w-36 rounded-lg flex flex-col justify-center items-center bg-black text-white text-lg"
+            className="h-32 w-36 rounded-lg flex flex-col justify-center items-center bg-black text-orange-500 text-lg"
             key={categorie.title}
           >
             {categorie.icon}
