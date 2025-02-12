@@ -8,7 +8,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 export function CardProduct({ product }: CardProductProps) {
   return (
     <NavLink to={`/product/${product._id}`}>
-      <div className="cursor-pointer group relative h-full  w-56 border rounded-md flex flex-col justify-center items-center p-2">
+      <div className="cursor-pointer group relative h-full  w-56 bg-gradient-to-r from-white to-orange-600/20 rounded-br-3xl flex flex-col justify-center items-center p-2">
         <div className="relative transition-all w-full flex justify-center">
           {product.path_image ? (
             <img
@@ -29,7 +29,9 @@ export function CardProduct({ product }: CardProductProps) {
         </div>
         <div className=" w-full">
           <h2 className="text-xs font-bold mt-5">{product.title}</h2>
-          <p className="text-orange-500 text-sm mt-1">{product.price} R$</p>
+          <p className="text-orange-500 text-sm mt-1 font-bold">
+            {product.price} R$
+          </p>
         </div>
       </div>
     </NavLink>

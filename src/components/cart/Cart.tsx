@@ -22,11 +22,10 @@ export function Cart(styleCart: CartProps) {
       <SheetTrigger className={`${styleCart}`}>
         {' '}
         <h3 className="flex flex-col items-center relative">
-          <span className="text-xs absolute bottom-8 right-3">
+          <span className="text-xs absolute bottom-6 right-0">
             {cart.length >= 1 ? cart.length : ''}
           </span>
-          <FaCartShopping />
-          Carrinho
+          <FaCartShopping className="text-2xl" />
         </h3>
       </SheetTrigger>
       <SheetContent>

@@ -11,7 +11,10 @@ export function SkeletonCard({ qtDivs }: TdivQt) {
     <section className="flex flex-wrap justify-center gap-x-5">
       {dataDivNumbers.map((index) => {
         return (
-          <div className="relative flex items-center justify-center">
+          <div
+            key={index}
+            className="relative flex items-center justify-center"
+          >
             <h1 className="absolute text-slate-500">Carregando..</h1>
             <Skeleton key={index} className="h-80 w-52 rounded-md my-20 " />
           </div>

@@ -3,15 +3,17 @@ import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { IoPerson } from 'react-icons/io5';
 import { ModelHeader } from './model-header';
 import { Cart } from '../cart/Cart';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useModelAdminAuth } from '@/pages/products/admin/model.admin';
+import { MenuMobile } from './menu-mobile/menuMobile';
+import { MdDashboard, MdOutlineHandyman } from 'react-icons/md';
 export function Header() {
   const { data } = ModelHeader();
   const { data: checkAdm } = useModelAdminAuth();
 
   return (
     <header className="  h-20">
-      <div className="flex items-center justify-between h-20 px-10  w-screen fixed  mx-auto z-50 bg-white border-b">
+      <div className="flex items-center justify-between h-20 md:px-10 px-5  w-screen fixed  mx-auto z-50 bg-white border-b">
         <div className="flex items-center  uppercase">
           <img src={icon} className="h-8" />
           <h1 className="ml-2 font-extrabold text-3xl underline">
@@ -22,29 +24,29 @@ export function Header() {
           <ul className="gap-x-8 flex items-center ">
             {data.menuLinks.map((menu) => {
               return (
-                <Link
+                <NavLink
                   key={menu.title}
                   to={menu.route}
-                  className="cursor-pointer  text-gray-500"
+                  className="cursor-pointer flex items-center gap-x-2  text-gray-500"
                 >
-                  {menu.title}
-                </Link>
+                  {menu.icon && <menu.icon />} {menu.title}
+                </NavLink>
               );
             })}
             {checkAdm.userAdmin?.status === 200 ? (
               <>
-                <Link
+                <NavLink
                   to={'/productmanagement'}
-                  className="cursor-pointer  text-blue-500"
+                  className="cursor-pointer flex items-center gap-x-2   text-blue-500"
                 >
-                  Gerenciamento
-                </Link>
-                <Link
+                  <MdOutlineHandyman /> Gerenciamento
+                </NavLink>
+                <NavLink
                   to={'/dashboard'}
-                  className="cursor-pointer  text-blue-500"
+                  className="cursor-pointer flex items-center gap-x-2   text-blue-500"
                 >
-                  Dashboard
-                </Link>
+                  <MdDashboard /> Dashboard
+                </NavLink>
               </>
             ) : (
               ''
@@ -66,8 +68,9 @@ export function Header() {
             <Cart styleCart="" />
           </li>
         </ul>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center space-x-2">
           <Cart styleCart="" />
+          <MenuMobile />
         </div>
       </div>
     </header>
