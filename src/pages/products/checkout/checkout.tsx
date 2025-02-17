@@ -14,7 +14,7 @@ import useStoreCart from '@/global/useStoreCart';
 import { useModelCart } from '@/components/cart/model.cart';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-export function CheckOut() {
+export default function CheckOut() {
   const { cart, decrCart } = useStoreCart();
   const { data } = useModelCart();
   const navigate = useNavigate();

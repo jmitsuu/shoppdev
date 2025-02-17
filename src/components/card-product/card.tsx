@@ -8,8 +8,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 export function CardProduct({ product }: CardProductProps) {
   return (
     <NavLink to={`/product/${product._id}`}>
-      <div className="cursor-pointer group relative h-full  w-56 bg-gradient-to-r from-white to-orange-600/20 rounded-br-3xl flex flex-col justify-center items-center p-2">
-        <div className="relative transition-all w-full flex justify-center">
+      <div className="cursor-pointer group relative h-96  w-56  bg-orange-600  transition-all  rounded-md bg-opacity-5 flex flex-col justify-center items-center p-2">
+        <div className="relative transition-all w-full flex justify-center ">
           {product.path_image ? (
             <img
               src={`${API_URL + product.path_image}`}

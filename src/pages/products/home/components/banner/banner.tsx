@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import girlBanner from '@/assets/images/banner/girl-banner.png';
 export function Banner() {
   return (
-    <section className="w-full mnin-h-96  flex md:flex-row flex-col items-center justify-between my-20 py-20 px-20 bg-rose-50/40">
+    <section className="w-full mnin-h-96  flex md:flex-row flex-col rounded-md items-center justify-between my-20 py-20 px-20 bg-rose-50/40">
       <div className="md:space-y-2 space-y-5 flex flex-col md:mb-0 mb-5 md:items-start items-center">
         <h1 className="md:text-5xl text-3xl text-orange-500 font-bold">
           desconto de 30%

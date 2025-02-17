@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import useStoreCart from '@/global/useStoreCart';
 import { NavLink } from 'react-router-dom';
 const API_URL = import.meta.env.VITE_API_URL;
-export function InfoProduct() {
+export default function InfoProduct() {
   const { data, state } = useModelInfoProduct();
   const { incCart } = useStoreCart();
   return (

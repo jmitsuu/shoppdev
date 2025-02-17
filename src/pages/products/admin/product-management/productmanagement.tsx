@@ -5,7 +5,7 @@ import { ListTableProducts } from '../components/list-products/listtableproducts
 import { CreateProduct } from '../components/modal-create-products/createproduct';
 import { useModelProducts } from '../../model.products';
 
-export function ProductManagement() {
+export default function ProductManagement() {
   const { data } = useModelProducts();
   return (
     <Container>

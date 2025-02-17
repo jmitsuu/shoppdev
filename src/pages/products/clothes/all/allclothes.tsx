@@ -6,7 +6,7 @@ import { Tproducts } from '../../products.type';
 import { useModelProducts } from '../../model.products';
 import { useEffect } from 'react';
 
-export function AllClothes() {
+export default function AllClothes() {
   const { data, state, actions } = useModelProducts();
   useEffect(() => {
     actions.setLimitProducts(0);

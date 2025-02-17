@@ -43,7 +43,7 @@ export function useModalCreateProduct() {
     formData.append('price', data.price.toString());
     formData.append('description', data.description);
     formData.append('category', data.category);
-    formData.append('genere', data.gender);
+    formData.append('gender', data.gender);
     submitProduct(formData);
   };
   return {

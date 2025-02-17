@@ -4,6 +4,7 @@ import { getTokenAdmin } from '../../utils/getlocalstorage';
 const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getProducts(limit: number) {
+  await new Promise((resolve) => setTimeout(resolve, 200));
   try {
     const { data } = await axios.get(
       `${API_URL + endPoint.products.list}?limit=${limit}`
