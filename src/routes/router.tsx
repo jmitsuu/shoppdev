@@ -11,7 +11,6 @@ import { Unauthorized } from '@/pages/layouts/unauthorized';
 import { GenderProducts } from '@/pages/products/clothes/male&female/gendersproducts';
 import { Clothes } from '@/pages/products/clothes/clothes';
 import { lazy, Suspense } from 'react';
-import { LoadingSuspense } from '@/pages/layouts/LoadingSuspense';
 
 export function ShoppRoutes() {
   const { data } = useModelAdminAuth();
@@ -28,8 +27,15 @@ export function ShoppRoutes() {
   const Dashboard = lazy(
     () => import('@/pages/products/admin/dashboard/dashboard')
   );
+
   return (
-    <Suspense fallback={<LoadingSuspense />}>
+    <Suspense
+      fallback={
+        <div className="h-screen w-screen flex items-center justify-center text-4xl text-slate-400">
+          Loading..
+        </div>
+      }
+    >
       <Routes>
         <Route path="/" element={<HomePage />} />
 
