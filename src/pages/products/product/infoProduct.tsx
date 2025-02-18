@@ -1,4 +1,3 @@
-import { Container } from '@/pages/layouts/container';
 import { useModelInfoProduct } from './model.infoproduct';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
