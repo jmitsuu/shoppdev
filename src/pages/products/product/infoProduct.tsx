@@ -24,7 +24,7 @@ export default function InfoProduct() {
           </div>
         ) : (
           <div className=" flex justify-center items-center">
-            <div className="min-h-96 flex md:flex-row flex-col border rounded-sm p-2 space-x-5">
+            <div className="min-h-96 md:h-[556px] flex md:flex-row flex-col border rounded-sm p-2 space-x-5">
               {state.isPending ? <Skeleton className="w-[255px]" /> : ''}
 
               <img

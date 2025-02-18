@@ -1,6 +1,7 @@
 import { PiTeaBagFill } from 'react-icons/pi';
 import { GiClothes } from 'react-icons/gi';
 import { FaHome } from 'react-icons/fa';
+import { getTokenAdmin } from '@/utils/getlocalstorage';
 export function ModelHeader() {
   const menuLinks = [
     {
@@ -18,16 +19,11 @@ export function ModelHeader() {
       title: 'Acessórios',
       route: '/accessories',
     },
-    // {
-    //   title: 'Homens',
-    //   route: '/clothes?gender=male',
-    // },
-    // {
-    //   title: 'Mulheres',
-    //   route: '?gender=female',
-    // },
   ];
+  const name = getTokenAdmin.userData
+    ? JSON.parse(getTokenAdmin.userData)
+    : null;
   return {
-    data: { menuLinks },
+    data: { menuLinks, name },
   };
 }

@@ -1,7 +1,7 @@
 export default function Dashboard() {
   return (
-    <div>
+    <section className="min-h-screen">
       <h1>Dashboard</h1>
-    </div>
+    </section>
   );
 }

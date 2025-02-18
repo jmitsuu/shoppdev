@@ -64,7 +64,7 @@ export function Header() {
           <li className=" cursor-pointer text-orange-700">
             <NavLink to="/auth" className="flex flex-col items-center">
               <IoPerson />
-              <h3>Entrar</h3>
+              {data.name ? data.name.userName : <h3>Entrar</h3>}
             </NavLink>
           </li>
           <li className="flex flex-col items-center cursor-pointer text-orange-700">
