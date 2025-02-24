@@ -3,17 +3,16 @@ import { Hero } from './components/hero/hero';
 import { Categories } from './components/hero-categories/categories';
 import { Title } from './components/title/title';
 // import { useModelProducts } from './model.home';
-import { CardProduct } from '../../../components/card-product/card';
-import { Tproducts } from '../products.type';
 import { Banner } from './components/banner/banner';
 import { ContainerCards } from '../../layouts/containerCards';
 import { SkeletonCard } from '../../layouts/skeletonCard';
 import { useModelProducts } from '../model.products';
 import { useEffect } from 'react';
+import { CarouselProducts } from './components/carousel/carouselProducts';
 export function HomePage() {
   const { data, state, actions } = useModelProducts();
   useEffect(() => {
-    actions.setLimitProducts(4);
+    actions.setLimitProducts(10);
   }, []);
 
   return (
@@ -29,15 +28,7 @@ export function HomePage() {
           {state.isPending || state.isError ? <SkeletonCard qtDivs={3} /> : ''}
         </div>
         <ContainerCards styleDiv="flex md:flex-row flex-col justify-center items-center">
-          {data.listProducts?.map((product: Tproducts) => {
-            return (
-              <CardProduct
-                itemProduct={product}
-                product={product}
-                key={product._id}
-              />
-            );
-          })}
+          <CarouselProducts ArrProducts={data.listProducts} />
         </ContainerCards>
         <Banner />
         <Title
@@ -48,15 +39,7 @@ export function HomePage() {
           {state.isPending || state.isError ? <SkeletonCard qtDivs={3} /> : ''}
         </div>
         <ContainerCards styleDiv="flex md:flex-row flex-col justify-center items-center">
-          {data.listProducts?.map((product: Tproducts) => {
-            return (
-              <CardProduct
-                itemProduct={product}
-                product={product}
-                key={product._id}
-              />
-            );
-          })}
+          <CarouselProducts ArrProducts={data.listProducts} />
         </ContainerCards>
       </Container>
     </>
